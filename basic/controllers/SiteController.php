@@ -60,7 +60,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $date = Yii::$app->cache->getOrSet('m_date', function () {
+            return date('Y-m-d H:i:s');
+        });
+        return $this->render('index', ['date' => $date]);
     }
 
     /**
