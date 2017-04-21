@@ -1,11 +1,12 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $model app\models\FeedbackForm */
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use vova07\imperavi\Widget;
 
-/* @var $model app\models\FeedbackForm */
+
 
 $this->title = 'My Yii Application';
 ?>

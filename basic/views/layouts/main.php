@@ -37,7 +37,8 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/']],
-            ['label' => 'Feedback', 'url' => ['/feedback/']],
+            ['label' => 'Feedback form', 'url' => ['/feedback/']],
+            ['label' => 'Feedback list', 'url' => ['/feedback/all']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (

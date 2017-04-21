@@ -4,6 +4,7 @@ namespace app\controllers;
 use app\models\Feedback;
 use app\models\FeedbackForm;
 use Yii;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\UploadedFile;
 
@@ -27,4 +28,21 @@ class FeedbackController extends Controller
             'model' => $model,
         ]);
     }
+
+
+    public function actionAll()
+    {
+        $query = Feedback::find();
+
+        $provider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => 3,
+            ]
+        ]);
+        return $this->render('list', [
+            'dataProvider' => $provider,
+        ]);
+    }
+
 }

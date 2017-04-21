@@ -11,6 +11,12 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
+/**
+ * Class Theme
+ * @property integer id
+ * @property string name
+ * @package app\models
+ */
 class Theme extends ActiveRecord
 {
 
