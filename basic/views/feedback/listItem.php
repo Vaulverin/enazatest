@@ -6,6 +6,6 @@ use yii\helpers\HtmlPurifier;
 ?>
 
 <div class="list-item">
-    <h2><?= Html::encode($model->theme->name) ?></h2>
+    <a href="/feedback/<?=$model->id?>"><h2><?= Html::encode($model->theme->name) ?></h2></a>
     <?= HtmlPurifier::process($model->body) ?>
 </div>
