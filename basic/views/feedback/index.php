@@ -13,7 +13,7 @@ $this->title = 'My Yii Application';
     <div class="body-content">
         <h1>Feedback form is HERE!</h1>
         <div class="row margin-null">
-            <?php $form = ActiveForm::begin(); ?>
+            <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
             <?= $form->field($model, 'theme')->dropDownList($model->getThemes(),
                 ['prompt'=>'- Выберите тему -'])  ?>
@@ -27,7 +27,7 @@ $this->title = 'My Yii Application';
                     ]
                 ]
             ]); ?>
-            <?= $form->field($model, 'file') ?>
+            <?= $form->field($model, 'file')->fileInput() ?>
             <div class="form-group">
                 <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
             </div>

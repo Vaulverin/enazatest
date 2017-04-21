@@ -4,11 +4,13 @@ namespace app\models;
 
 use Yii;
 use yii\base\Model;
+use yii\web\UploadedFile;
 
 class FeedbackForm extends Model
 {
     public $theme;
     public $body;
+    /** @var  UploadedFile */
     public $file;
 
 
@@ -19,10 +21,10 @@ class FeedbackForm extends Model
     {
         return [
 
-            [['theme', 'body', 'file'], 'required'],
+            [['theme', 'body'], 'required'],
             ['theme', 'integer'],
-            ['body', 'string'],
-            ['file', 'file', 'extensions'=>['jpeg', 'png', 'gif', 'pdf']],
+            ['body', 'string', 'message' => 'Введите сообщение'],
+            [['file'], 'file', 'skipOnEmpty' => true, 'extensions'=>['jpeg', 'png', 'gif', 'pdf']],
         ];
     }
 
@@ -44,6 +46,16 @@ class FeedbackForm extends Model
             ->select(['name'])
             ->indexBy('id')
             ->column();
+    }
+
+    public function upload()
+    {
+        if ($this->validate()) {
+            $this->file->saveAs('uploads/' . $this->file->baseName . '.' . $this->file->extension);
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
