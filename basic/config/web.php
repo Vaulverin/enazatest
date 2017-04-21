@@ -42,6 +42,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'feedback/<id:\d+>' => 'feedback/index',
             ],
         ],
         

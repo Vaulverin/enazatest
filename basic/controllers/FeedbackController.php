@@ -27,7 +27,7 @@ class FeedbackController extends Controller
             $model->file = UploadedFile::getInstance($model, 'file');
             $model->upload();
             $model->save();
-            $this->redirect('/feedback/'.$model->id);
+            return $this->redirect('/feedback/'.$model->id);
         }
         return $this->render('index', [
             'model' => $model,
