@@ -1,7 +1,9 @@
 <?php
 namespace app\controllers;
 
+use app\models\FeedbackForm;
 use Yii;
+use yii\web\Controller;
 
 class FeedbackController extends Controller
 {
@@ -12,6 +14,14 @@ class FeedbackController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = new FeedbackForm();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+
+            return $this->refresh();
+        }
+        return $this->render('index', [
+            'model' => $model,
+        ]);
     }
 }
