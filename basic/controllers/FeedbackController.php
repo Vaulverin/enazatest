@@ -2,7 +2,6 @@
 namespace app\controllers;
 
 use app\models\Feedback;
-use app\models\FeedbackForm;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
@@ -17,10 +16,11 @@ class FeedbackController extends Controller
      */
     public function actionIndex()
     {
-        $model = new FeedbackForm();
+        $model = new Feedback();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             Yii::$app->session->setFlash('contactFormSubmitted');
             $model->file = UploadedFile::getInstance($model, 'file');
+            $model->upload();
             $model->save();
             return $this->refresh();
         }

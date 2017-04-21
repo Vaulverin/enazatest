@@ -16,7 +16,7 @@ $this->title = 'My Yii Application';
         <div class="row margin-null">
             <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
-            <?= $form->field($model, 'theme')->dropDownList($model->getThemes(),
+            <?= $form->field($model, 'themeId')->dropDownList($model->getThemes(),
                 ['prompt'=>'- Выберите тему -'])  ?>
             <?= $form->field($model, 'body')->widget(Widget::className(), [
                 'settings' => [
