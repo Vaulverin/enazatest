@@ -14,15 +14,20 @@ class FeedbackController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
+    public function actionIndex($id = null)
     {
+        if ($id != null) {
+            return $this->render('feedback', [
+                'model' => Feedback::findOne(intval($id)),
+            ]);
+        }
         $model = new Feedback();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             Yii::$app->session->setFlash('contactFormSubmitted');
             $model->file = UploadedFile::getInstance($model, 'file');
             $model->upload();
             $model->save();
-            return $this->refresh();
+            $this->redirect('/feedback/'.$model->id);
         }
         return $this->render('index', [
             'model' => $model,

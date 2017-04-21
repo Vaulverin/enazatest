@@ -14,6 +14,7 @@ use yii\web\UploadedFile;
 
 /**
  * Class Feedback
+ * @property integer $id
  * @property integer $themeId
  * @property string $body
  * @property string $filePath
@@ -65,6 +66,7 @@ class Feedback extends ActiveRecord
         if ($this->validate() && $this->file != null) {
             $path = 'uploads/' . $this->file->baseName . '.' . $this->file->extension;
             $this->file->saveAs($path);
+            $this->file = null;
             $this->filePath = $path;
             return true;
         }
