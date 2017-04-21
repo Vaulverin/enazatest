@@ -15,6 +15,6 @@ $this->title = 'My Yii Application';
     </div>
 
     <div class="body-content">
-
+<a class="btn-link" href="/?flush-cache">Очистить кэш</a>
     </div>
 </div>

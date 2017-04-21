@@ -64,7 +64,7 @@ class Feedback extends ActiveRecord
     public function upload()
     {
         if ($this->validate() && $this->file != null) {
-            $path = 'uploads/' . $this->file->baseName . '.' . $this->file->extension;
+            $path = 'uploads/' . uniqid(rand(), true) . '.' . $this->file->extension;
             $this->file->saveAs($path);
             $this->file = null;
             $this->filePath = $path;
