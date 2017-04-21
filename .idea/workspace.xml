@@ -101,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="list.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/basic/views/feedback/list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+            <state relative-caret-position="456">
+              <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
               <folding>
                 <element signature="e#81#113#0#PHP" expanded="true" />
               </folding>
@@ -113,7 +113,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listItem.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="listItem.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/basic/views/feedback/listItem.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
@@ -148,10 +148,10 @@
         <option value="$PROJECT_DIR$/basic/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/basic/views/feedback/index.php" />
         <option value="$PROJECT_DIR$/basic/controllers/FeedbackController.php" />
-        <option value="$PROJECT_DIR$/basic/views/feedback/list.php" />
         <option value="$PROJECT_DIR$/basic/models/Feedback.php" />
         <option value="$PROJECT_DIR$/basic/models/Theme.php" />
         <option value="$PROJECT_DIR$/basic/views/feedback/listItem.php" />
+        <option value="$PROJECT_DIR$/basic/views/feedback/list.php" />
       </list>
     </option>
   </component>
@@ -431,12 +431,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1492616969634</updated>
-      <workItem from="1492754713670" duration="14491000" />
+      <workItem from="1492754713670" duration="15048000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14491000" />
+    <option name="totallyTimeSpent" value="15048000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -631,22 +631,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic/views/feedback/list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-          <folding>
-            <element signature="e#81#113#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/basic/views/feedback/listItem.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#6#30#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic/views/feedback/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+          <folding>
+            <element signature="e#81#113#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
