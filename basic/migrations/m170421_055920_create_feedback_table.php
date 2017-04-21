@@ -15,7 +15,8 @@ class m170421_055920_create_feedback_table extends Migration
         $this->createTable('feedback', [
             'id' => $this->primaryKey(),
             'theme_id' => $this->integer(),
-            'body' => $this->text()
+            'body' => $this->text(),
+            'file_path' => $this->string()
         ]);
         $this->addForeignKey('fk_feedback_theme_id', 'feedback', 'theme_id', 'theme', 'id');
     }

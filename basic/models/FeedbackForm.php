@@ -24,7 +24,7 @@ class FeedbackForm extends Model
             [['theme', 'body'], 'required'],
             ['theme', 'integer'],
             ['body', 'string', 'message' => 'Введите сообщение'],
-            [['file'], 'file', 'skipOnEmpty' => true, 'extensions'=>['jpeg', 'png', 'gif', 'pdf']],
+            [['file'], 'file', 'extensions'=>['jpeg', 'jpg', 'png', 'gif', 'pdf']],
         ];
     }
 
@@ -48,14 +48,19 @@ class FeedbackForm extends Model
             ->column();
     }
 
-    public function upload()
+    public function save()
     {
-        if ($this->validate()) {
-            $this->file->saveAs('uploads/' . $this->file->baseName . '.' . $this->file->extension);
-            return true;
-        } else {
-            return false;
+        $path = '';
+        if ($this->validate() && $this->file != null) {
+            $path = 'uploads/' . $this->file->baseName . '.' . $this->file->extension;
+            $this->file->saveAs($path);
         }
+        $feedback = new Feedback();
+        $feedback->theme_id = $this->theme;
+        $feedback->body = $this->body;
+        $feedback->file_path = $path;
+        $feedback->save();
+        return true;
     }
 
 }

@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 
+use app\models\Feedback;
 use app\models\FeedbackForm;
 use Yii;
 use yii\web\Controller;
@@ -18,11 +19,8 @@ class FeedbackController extends Controller
         $model = new FeedbackForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             Yii::$app->session->setFlash('contactFormSubmitted');
-            $model->file = UploadedFile::getInstance($model, 'imageFile');
-            if ($model->upload()) {
-                // file is uploaded successfully
-                return;
-            }
+            $model->file = UploadedFile::getInstance($model, 'file');
+            $model->save();
             return $this->refresh();
         }
         return $this->render('index', [
